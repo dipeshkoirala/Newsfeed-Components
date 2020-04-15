@@ -133,10 +133,12 @@ function panelComponent(titleData, dateData, array) {
 
   const para = document.createElement("p");
   para.classList.add("date");
+  para.textContent = dateData;
   //para.textContent=
 
   const spanButton = document.createElement("span");
   spanButton.classList.add("panel-buttons");
+  spanButton.textContent = array;
 
   const openButton = document.createElement("span");
   openButton.classList.add("expandButton", "article-open");
