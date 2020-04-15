@@ -1,12 +1,12 @@
 /* This is the data we will be using, study it but don't change anything, yet. */
 
 let menuItems = [
-  'Students',
-  'Faculty',
+  "Students",
+  "Faculty",
   "What's New",
-  'Tech Trends',
-  'Music',
-  'Log Out'
+  "Tech Trends",
+  "Music",
+  "Log Out",
 ];
 
 /* 
@@ -33,3 +33,60 @@ let menuItems = [
   Step 6: add the menu component to the DOM.
   
 */
+// function menuComponent() {
+const myMenu = document.createElement("div");
+myMenu.style.width = "100px";
+myMenu.style.height = "100px";
+myMenu.style.backgroundColor = "#C0C0C0";
+myMenu.classList.add("menu");
+let myUl = document.createElement("ul");
+menuItems.forEach((element) => {
+  let li = document.createElement("li");
+  li.textContent = element;
+  myUl.appendChild(li);
+});
+myMenu.appendChild(myUl);
+let menu = document.querySelector(".articles");
+menu.classList.add("menu--open", "menu");
+menu.appendChild(myMenu);
+
+menu.addEventListener("click", (event) => {
+  menu.classList.toggle("menu--open");
+});
+
+//menuButton.addEventListener("click",(event)=>);
+//   return menu;
+// }
+
+//menu.addEventListener("click", menuComponent);
+//console.log(menu);
+// function liComponentCreater() {
+
+//  let listItem=document.querySelectorAll()
+//   // const myLi = [];
+//   // for (let i = 0; i < menuItems.length; i++)
+//   //   ;
+//   // myLi[i].textContent = menuItems[i];
+
+//   // return myLi;
+// }
+
+// myUl.appendChild(myLi);
+
+// const menu1 = document.querySelector(".menu-button");
+// menu1.appendChild(myMenu);
+// console.log(menu1);
+// menuItems.forEach((element) => {
+//   const articleComponent = liComponentCreater(element);
+//   menu1.appendChild(articleComponent);
+//   console.log(articleComponent);
+// });
+
+//for (let i = 0; i < menuItems.length; i++) {}
+//console.log();
+// let arr = document.querySelector("li");
+// Array.from(arr);
+
+// for (var i = 0; i < menuItems.length; i++) {
+//   arr[i].textContent = menuItems[i];
+// }
