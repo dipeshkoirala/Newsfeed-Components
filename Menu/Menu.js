@@ -46,47 +46,10 @@ menuItems.forEach((element) => {
   myUl.appendChild(li);
 });
 myMenu.appendChild(myUl);
-let menu = document.querySelector(".articles");
-menu.classList.add("menu--open", "menu");
+let menu = document.querySelector(".menu-button");
+menu.classList.add("menu", "menu--open");
 menu.appendChild(myMenu);
 
 menu.addEventListener("click", (event) => {
   menu.classList.toggle("menu--open");
 });
-
-//menuButton.addEventListener("click",(event)=>);
-//   return menu;
-// }
-
-//menu.addEventListener("click", menuComponent);
-//console.log(menu);
-// function liComponentCreater() {
-
-//  let listItem=document.querySelectorAll()
-//   // const myLi = [];
-//   // for (let i = 0; i < menuItems.length; i++)
-//   //   ;
-//   // myLi[i].textContent = menuItems[i];
-
-//   // return myLi;
-// }
-
-// myUl.appendChild(myLi);
-
-// const menu1 = document.querySelector(".menu-button");
-// menu1.appendChild(myMenu);
-// console.log(menu1);
-// menuItems.forEach((element) => {
-//   const articleComponent = liComponentCreater(element);
-//   menu1.appendChild(articleComponent);
-//   console.log(articleComponent);
-// });
-
-//for (let i = 0; i < menuItems.length; i++) {}
-//console.log();
-// let arr = document.querySelector("li");
-// Array.from(arr);
-
-// for (var i = 0; i < menuItems.length; i++) {
-//   arr[i].textContent = menuItems[i];
-// }

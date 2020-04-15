@@ -122,8 +122,14 @@ const data = [
 
 <span class='expandButton'></span>
 </div> */
+// let array = [
+//   data["firstParagraph"],
+//   data["secondParagraph"],
+//   data["thirdParagraph"],
+// ];
 
-function panelComponent(titleData, dateData, array) {
+//console.log(array);
+function panelComponent(titleData, dateData, first, second, third) {
   const panel = document.createElement("div");
   panel.classList.add("article");
 
@@ -136,22 +142,52 @@ function panelComponent(titleData, dateData, array) {
   para.textContent = dateData;
   //para.textContent=
 
-  const spanButton = document.createElement("span");
-  spanButton.classList.add("panel-buttons");
-  spanButton.textContent = array;
+  const span = document.createElement("span");
+  span.classList.add("expandButton");
+
+  let p1 = document.createElement("p");
+  p1.textContent = first;
+  span.appendChild(p1);
+  let p2 = document.createElement("p");
+  p2.textContent = second;
+  span.appendChild(p2);
+  let p3 = document.createElement("p");
+  p3.textContent = third;
+  span.appendChild(p3);
+  // span.textContent = first;
+  // span.textContent = second;
+  // span.textContent = third;
+  // span.textContent = "Expand";
+  //
 
   const openButton = document.createElement("span");
-  openButton.classList.add("expandButton", "article-open");
+  openButton.classList.add("article-open", "hide-btn");
   openButton.textContent = "\u25bc";
 
-  spanButton.appendChild(openButton);
+  // const closeButton = document.createElement("span");
+  // closeButton.classList.add("article-close", "hide-btn");
+  // closeButton.textContent = "\u25b2";
+
+  //append openButton and closeButton to its parent
+  span.appendChild(openButton);
+  //span.appendChild(closeButton);
+  //append title&cPanelButton to its parent
+  //para.prepend(span);
+  //
+
+  // spanButton.appendChild(openButton);
 
   panel.appendChild(title);
   panel.appendChild(para);
-  panel.appendChild(spanButton);
-  para.addEventListener("click", (event) => {
-    //console.log(event.target);
-    para.classList.toggle("expandButton");
+  panel.appendChild(span);
+
+  span.addEventListener("click", (event) => {
+    console.log(event.target);
+    openButton.classList.toggle("hide-btn");
+    //closeButton.classList.toggle("hide-btn");
+    span.classList.toggle("toggle-on");
+    // p2.classList.toggle("toggle-on");
+    // p3.classList.toggle("toggle-on");
   });
 
   return panel;
@@ -170,6 +206,6 @@ data.forEach((panelObj) => {
     panelObj.secondParagraph,
     panelObj.thirdParagraph
   );
-  console.log(panelComponent1);
+
   article.appendChild(panelComponent1);
 });
